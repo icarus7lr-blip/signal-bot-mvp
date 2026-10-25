@@ -1,0 +1,17 @@
+{
+  "name": "signal-bot-mvp",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev --workspace backend\" \"npm run dev --workspace frontend\"",
+    "docker:up": "docker-compose up -d postgres redis",
+    "docker:down": "docker-compose down",
+    "install:all": "npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
